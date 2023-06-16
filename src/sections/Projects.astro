@@ -1,0 +1,41 @@
+---
+import Project from '../components/Project.astro';
+---
+
+<section class='projects'>
+  <Project
+    href='https://github.com/chmery/motoradar'
+    icon='/icons/car.svg'
+    title='Motoradar'
+    subTitle='Car marketplace'
+  />
+  <Project
+    href='https://github.com/cateruu/F1-info-v2'
+    icon='/icons/steering-wheel.svg'
+    title='F1 Info'
+    subTitle='Informations from F1 world'
+  />
+  <Project
+    href='https://github.com/cateruu/social-app'
+    icon='/icons/users.svg'
+    title='Social'
+    subTitle='Social media app inspired by Twitter'
+  />
+  <img src='/devider.svg' class='devider' />
+</section>
+
+<style lang='scss'>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 120px;
+  }
+
+  .devider {
+    width: 450px;
+    transform: rotate(60deg);
+    margin-top: -60px;
+    align-self: center;
+  }
+</style>
