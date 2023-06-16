@@ -1,6 +1,90 @@
 ---
 ---
 
-<section class='about'><img src='/about.svg' class='about__image' /></section>
+<section class='about'>
+  <img src='/about.svg' class='about__image' />
+  <div>
+    <h2 class='about__header'>About</h2>
+    <p class='about__text'>
+      Front-end developer. <br />
+      Creating visually appealing and user-friendly interfaces. <br />
+      Collaborative and up-to-date with industry trends. <br />
+      Dedicated to delivering engaging digital experiences.
+    </p>
+    <h3 class='about__header-secondary'>Experience</h3>
+    <div class='about__experience'>
+      <p class='about__experience__date'>02/23 - now</p>
+      <div class='about__experience__circle'></div>
+      <div class='about__experience__place'>
+        <p class='about__experience__place__firm'>Digis</p>
+        <p class='about__experience__place__role'>Front-end Developer</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<style lang='scss'></style>
+<style lang='scss'>
+  @use '../styles/mixins' as *;
+
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__header {
+      font-size: 48px;
+      font-weight: 700;
+      font-family: 'Syne Variable';
+      color: var(--blue);
+    }
+
+    &__text {
+      font-size: 20px;
+      color: var(--secondary);
+      margin: 20px 0 40px 0;
+    }
+
+    &__header-secondary {
+      color: var(--red);
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-family: 'Syne Variable';
+    }
+
+    &__experience {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &__date {
+        color: #5c5c5c;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      &__circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+
+      &__place {
+        &__firm {
+          font-weight: 500;
+          font-family: 'Syne Variable';
+          color: var(--main);
+        }
+
+        &__role {
+          font-size: 12px;
+          color: var(--secondary);
+        }
+      }
+    }
+
+    &__image {
+      height: 270px;
+    }
+  }
+</style>
