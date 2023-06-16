@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string;
+  color: string;
+  href: string;
+}
+
+const { text, color, href } = Astro.props;
+---
+
+<a href={href} style={{ backgroundColor: color }} class='button'>{text}</a>
+
+<style lang='scss'>
+  .button {
+    height: 44px;
+    padding: 12px 30px;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    font-size: 16px;
+    font-family: 'Golos Text Variable';
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+  }
+</style>

@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.6.4"
+    "@fontsource-variable/golos-text": "^5.0.3",
+    "@fontsource-variable/syne": "^5.0.3",
+    "astro": "^2.6.4",
+    "sass": "^1.63.4"
   }
 }

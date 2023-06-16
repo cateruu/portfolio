@@ -1,0 +1,54 @@
+---
+import Link from './Link.astro';
+---
+
+<section class='landing'>
+  <div class='landing__text'>
+    <p class='landing__text__name'>Paweł Kromołowski</p>
+    <p class='landing__text__desc'>
+      Self-taught <br />Front-end Developer <br />Creating Captivating <br />Web
+      Experiences
+    </p>
+    <div class='landing__text__buttons-wrapper'>
+      <Link text='Projects' color='#00AFB9' href='#projects' />
+      <Link text='Contact Me' color='#fff' href='#contact' />
+    </div>
+  </div>
+  <img src='/landing.svg' class='landing__image' />
+</section>
+
+<style lang='scss'>
+  .landing {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      &__name {
+        font-family: 'Syne Variable';
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+
+      &__desc {
+        font-family: 'Syne Variable';
+        font-size: 60px;
+        color: var(--main);
+        font-weight: 600;
+      }
+
+      &__buttons-wrapper {
+        margin-top: 50px;
+        display: flex;
+        gap: 15px;
+      }
+    }
+
+    &__image {
+      height: 670px;
+    }
+  }
+</style>
