@@ -1,0 +1,98 @@
+---
+interface Props {
+  icon: string;
+  name: string;
+}
+
+const { icon, name } = Astro.props;
+---
+
+<div class='skill'>
+  <img src={icon} alt={name} class='skill__icon' />
+  <div class='skill__background'></div>
+  <div class='skill__inv'></div>
+  <div class='skill__name'>{name}</div>
+</div>
+
+<style lang='scss'>
+  .skill {
+    min-width: 70px;
+    min-height: 70px;
+    display: grid;
+    place-items: center;
+    position: relative;
+
+    &__inv {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    &__background {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: var(--main);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    &__icon {
+      height: 35px;
+      z-index: 2;
+    }
+
+    &__name {
+      position: absolute;
+      left: 0px;
+      font-size: 20px;
+      color: var(--secondary);
+      background-color: var(--background);
+      height: 70px;
+      padding: 0 30px;
+      border-radius: 100px;
+      display: none;
+      align-items: center;
+      padding-left: 90px;
+      z-index: 3;
+      animation: show 0.2s ease-in-out;
+
+      &::before {
+        content: ' ';
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: var(--main);
+      }
+    }
+
+    &:hover &__name {
+      display: flex;
+    }
+
+    &:hover &__icon {
+      z-index: 5;
+    }
+  }
+
+  @keyframes show {
+    0% {
+      width: 0;
+      font-size: 0;
+    }
+    99% {
+      font-size: 16px;
+    }
+    100% {
+      width: fit-content;
+    }
+  }
+</style>

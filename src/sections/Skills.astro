@@ -1,0 +1,31 @@
+---
+import Skill from '../components/Skill.astro';
+import { skills } from '../data/skills';
+---
+
+<section class='skills'>
+  <h2 class='skills__header'>Skills</h2>
+  <div class='skills__container'>
+    {skills.map((skill) => <Skill icon={skill.icon} name={skill.name} />)}
+  </div>
+</section>
+
+<style lang='scss'>
+  .skills {
+    width: 100%;
+
+    &__header {
+      font-family: 'Syne Variable';
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 30px;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+</style>
