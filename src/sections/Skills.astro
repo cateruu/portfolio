@@ -4,30 +4,62 @@ import { skills } from '../data/skills';
 ---
 
 <section class='skills'>
-  <h2 class='skills__header'>Skills</h2>
   <div class='skills__container'>
     {skills.map((skill) => <Skill icon={skill.icon} name={skill.name} />)}
   </div>
+  <p class='skills__title'>SKILLS</p>
 </section>
 
 <style lang='scss'>
-  .skills {
-    margin-bottom: 120px;
+  @use '../styles/mixins' as *;
 
-    &__header {
-      font-family: 'Syne Variable';
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--blue);
-      margin-bottom: 30px;
-      text-align: center;
-    }
+  .skills {
+    margin: 30px 0 160px;
+    position: relative;
 
     &__container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
+    }
+
+    &__title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-10deg);
+      font-size: 120px;
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: var(--red);
+      font-family: 'Syne Variable';
+      opacity: 0.2;
+      letter-spacing: 100px;
+      text-shadow: 4px 4px 2px var(--secondary);
+      user-select: none;
+
+      @include desktopM {
+        letter-spacing: 80px;
+      }
+
+      @include tablet {
+        letter-spacing: 50px;
+      }
+
+      @include tabletS {
+        transform: translate(-50%, -50%) rotate(-30deg);
+        font-size: 80px;
+      }
+
+      @include mobileL {
+        font-size: 60px;
+        letter-spacing: 20px;
+      }
+    }
+
+    @include mobileL {
+      margin-bottom: 120px;
     }
   }
 </style>

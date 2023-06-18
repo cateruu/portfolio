@@ -34,7 +34,11 @@ import Link from '../components/Link.astro';
         color: #fff;
         margin-bottom: 15px;
 
-        @include mobile {
+        @include tablet {
+          font-size: 22px;
+        }
+
+        @include tabletS {
           margin-top: 30px;
           font-size: 20px;
         }
@@ -46,6 +50,18 @@ import Link from '../components/Link.astro';
         color: var(--main);
         font-weight: 700;
 
+        @include desktopM {
+          font-size: 54px;
+        }
+
+        @include tablet {
+          font-size: 48px;
+        }
+
+        @include tabletS {
+          font-size: 40px;
+        }
+
         @include mobile {
           font-size: 25px;
         }
@@ -55,6 +71,11 @@ import Link from '../components/Link.astro';
         margin-top: 50px;
         display: flex;
         gap: 15px;
+        font-weight: 500;
+
+        @include tabletS {
+          margin: 30px 0 60px 0;
+        }
 
         @include mobile {
           margin: 20px 0 40px 0;
@@ -69,15 +90,36 @@ import Link from '../components/Link.astro';
     &__image {
       height: 670px;
 
+      @include desktopM {
+        height: 500px;
+      }
+
+      @include tablet {
+        height: 450px;
+        transform: rotate(15deg);
+      }
+
+      @include tabletS {
+        transform: rotate(30deg);
+      }
+
       @include mobile {
         height: 300px;
         transform: rotate(25deg);
       }
     }
 
-    @include mobile {
+    @include desktopM {
+      margin-bottom: 120px;
+    }
+
+    @include tabletS {
       flex-direction: column;
       justify-content: center;
+    }
+
+    @include mobileL {
+      margin-bottom: 0;
     }
   }
 </style>

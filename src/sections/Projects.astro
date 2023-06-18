@@ -18,11 +18,17 @@ import { projects } from '../data/projects';
 </section>
 
 <style lang='scss'>
+  @use '../styles/mixins' as *;
+
   .projects {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 120px;
+
+    @include mobileL {
+      margin-top: 80px;
+    }
   }
 
   .devider {
@@ -30,5 +36,20 @@ import { projects } from '../data/projects';
     transform: rotate(60deg);
     margin-top: -60px;
     align-self: center;
+
+    @include tablet {
+      width: 340px;
+      margin-top: -30px;
+    }
+
+    @include mobileL {
+      width: 400px;
+    }
+
+    @include mobile {
+      margin-top: 10px;
+      width: 230px;
+      transform: rotate(30deg);
+    }
   }
 </style>

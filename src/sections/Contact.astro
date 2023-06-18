@@ -1,4 +1,4 @@
-<section class='contact'>
+<section class='contact' id='contact'>
   <img src='/contact.svg' alt='contact blob' class='contact__image' />
   <div class='contact__container'>
     <h2 class='contact__container__header'>Keep in touch</h2>
@@ -26,6 +26,8 @@
 </section>
 
 <style lang='scss'>
+  @use '../styles/mixins' as *;
+
   .contact {
     display: flex;
     justify-content: center;
@@ -44,6 +46,14 @@
         color: var(--main);
         font-family: 'Syne Variable';
         margin-bottom: 30px;
+
+        @include desktopM {
+          font-size: 40px;
+        }
+
+        @include mobile {
+          font-size: 30px;
+        }
       }
 
       &__buttons-wrapper {
@@ -59,6 +69,12 @@
           border-radius: 100px;
           flex-grow: 1;
           margin-right: 15px;
+          font-weight: 500;
+
+          @include mobile {
+            font-size: 14px;
+            margin-right: 0;
+          }
         }
 
         &__icon {
@@ -70,6 +86,14 @@
           border-radius: 50%;
         }
       }
+    }
+
+    @include tabletS {
+      gap: 60px;
+    }
+
+    @include mobileL {
+      flex-direction: column;
     }
   }
 </style>

@@ -58,7 +58,19 @@ const { title } = Astro.props;
   }
 
   body {
-    padding: 0 160px;
+    padding: 0 240px;
+
+    @include desktopL {
+      padding: 0 180px;
+    }
+
+    @include desktopM {
+      padding: 0 120px;
+    }
+
+    @include tablet {
+      padding: 0 60px;
+    }
 
     @include mobile {
       padding: 0 20px;

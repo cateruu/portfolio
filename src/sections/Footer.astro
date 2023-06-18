@@ -10,6 +10,8 @@
 </footer>
 
 <style lang='scss'>
+  @use '../styles/mixins' as *;
+
   .footer {
     display: flex;
     justify-content: space-between;
@@ -20,6 +22,10 @@
 
     &__link {
       color: #fff;
+    }
+
+    @include mobileL {
+      font-size: 12px;
     }
   }
 </style>
