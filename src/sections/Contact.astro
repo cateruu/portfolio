@@ -1,0 +1,75 @@
+<section class='contact'>
+  <img src='/contact.svg' alt='contact blob' class='contact__image' />
+  <div class='contact__container'>
+    <h2 class='contact__container__header'>Keep in touch</h2>
+    <div class='contact__container__buttons-wrapper'>
+      <a
+        href='mailto:pawelkrml@gmail.com'
+        class='contact__container__buttons-wrapper__mail'>Contact Me</a
+      >
+      <a
+        href='https://github.com/cateruu'
+        target='_blank'
+        class='contact__container__buttons-wrapper__icon'
+      >
+        <img src='/icons/github.svg' alt='github logo' />
+      </a>
+      <a
+        href='https://www.linkedin.com/in/pawelkrml/'
+        target='_blank'
+        class='contact__container__buttons-wrapper__icon'
+      >
+        <img src='/icons/linkedin.svg' alt='linkedin logo' />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style lang='scss'>
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    margin-bottom: 150px;
+
+    &__image {
+      width: 335px;
+    }
+
+    &__container {
+      &__header {
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--main);
+        font-family: 'Syne Variable';
+        margin-bottom: 30px;
+      }
+
+      &__buttons-wrapper {
+        display: flex;
+        gap: 10px;
+
+        &__mail {
+          height: 44px;
+          background-color: var(--red);
+          color: #000;
+          display: grid;
+          place-items: center;
+          border-radius: 100px;
+          flex-grow: 1;
+          margin-right: 15px;
+        }
+
+        &__icon {
+          display: grid;
+          place-items: center;
+          width: 44px;
+          height: 44px;
+          background-color: var(--red);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+</style>
