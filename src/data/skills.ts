@@ -1,4 +1,4 @@
-export const skills = [
+export const frontend = [
   {
     icon: '/skills/react.svg',
     name: 'React',
@@ -43,9 +43,27 @@ export const skills = [
     icon: '/skills/cypress.svg',
     name: 'Cypress',
   },
+];
+
+export const backend = [
+  {
+    icon: '/skills/express.svg',
+    name: 'Express',
+  },
+  {
+    icon: '/skills/supabase.svg',
+    name: 'Supbase',
+  },
   {
     icon: '/skills/firebase.svg',
     name: 'Firebase',
+  },
+];
+
+export const tools = [
+  {
+    icon: '/skills/vscode.svg',
+    name: 'Visual Studio Code',
   },
   {
     icon: '/skills/git.svg',
@@ -54,5 +72,17 @@ export const skills = [
   {
     icon: '/skills/figma.svg',
     name: 'Figma',
+  },
+  {
+    icon: '/skills/jira.svg',
+    name: 'Jira',
+  },
+  {
+    icon: '/skills/bitbucket.svg',
+    name: 'Bitbucket',
+  },
+  {
+    icon: '/skills/github.svg',
+    name: 'GitHub',
   },
 ];

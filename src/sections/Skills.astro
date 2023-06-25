@@ -1,65 +1,118 @@
 ---
 import Skill from '../components/Skill.astro';
-import { skills } from '../data/skills';
+import { frontend, backend, tools } from '../data/skills';
 ---
 
 <section class='skills'>
+  <h2 class='skills__header'>Skills</h2>
   <div class='skills__container'>
-    {skills.map((skill) => <Skill icon={skill.icon} name={skill.name} />)}
+    <Skill
+      title='Front-end'
+      colors='#8146FF, #77ADFF, #8146FF'
+      skills={frontend}
+    />
+    <Skill
+      title='Back-end'
+      colors='#00ACD7, #3ECF8E, #FCCA40'
+      skills={backend}
+    />
+    <Skill title='Tools' colors='#DE4C36, #FFAE92, #B15500' skills={tools} />
   </div>
-  <p class='skills__title'>SKILLS</p>
+  <img src='/skills.svg' alt='skills blob' class='skills__blob' />
 </section>
 
 <style lang='scss'>
   @use '../styles/mixins' as *;
 
   .skills {
-    margin: 30px 0 160px;
+    margin: 260px 0 215px 0;
     position: relative;
 
-    &__container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    &__title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-10deg);
-      font-size: 120px;
-      color: transparent;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: var(--red);
+    &__header {
+      font-size: 48px;
+      font-weight: 700;
+      width: fit-content;
       font-family: 'Syne Variable';
-      opacity: 0.2;
-      letter-spacing: 100px;
-      text-shadow: 4px 4px 2px var(--secondary);
-      user-select: none;
+      background-color: #00c5ff;
+      background-image: linear-gradient(130deg, #001aff, #ff6b00);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      margin-bottom: 50px;
 
       @include desktopM {
-        letter-spacing: 80px;
+        font-size: 40px;
+      }
+
+      @include mobile {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__container {
+      display: grid;
+      grid-template: 125px auto / 300px 300px;
+      grid-template-areas:
+        'Front-end Back-end'
+        'Front-end Tools';
+      gap: 40px;
+
+      @include mobileL {
+        grid-template: auto / 300px;
+        grid-template-areas:
+          'Front-end'
+          'Back-end'
+          'Tools';
+      }
+    }
+
+    &__blob {
+      position: absolute;
+      top: -350px;
+      right: -250px;
+      transform: rotate(40deg);
+      width: 680px;
+
+      @include desktopL {
+        width: 500px;
+        top: -150px;
+      }
+
+      @include desktopM {
+        width: 500px;
+        top: -200px;
+        right: -170px;
       }
 
       @include tablet {
-        letter-spacing: 50px;
+        width: 350px;
+        top: -50px;
+        right: -100px;
       }
 
       @include tabletS {
-        transform: translate(-50%, -50%) rotate(-30deg);
-        font-size: 80px;
+        position: relative;
+        width: 350px;
+        top: 0;
+        left: 0;
+        order: -1;
+        margin-bottom: 20px;
       }
 
       @include mobileL {
-        font-size: 60px;
-        letter-spacing: 20px;
+        width: 200px;
       }
     }
 
-    @include mobileL {
-      margin-bottom: 120px;
+    @include tabletS {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0 100px 0;
     }
   }
 </style>
