@@ -34,8 +34,16 @@
     &__header {
       font-size: 48px;
       font-weight: 700;
+      width: fit-content;
       font-family: 'Syne Variable';
-      color: var(--blue);
+      background-color: #00c5ff;
+      background-image: linear-gradient(130deg, #00c5ff, #e4acff);
+      background-size: 100%;
+      background-repeat: repeat;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
 
       @include desktopM {
         font-size: 40px;
@@ -48,7 +56,7 @@
 
     &__text {
       font-size: 20px;
-      color: var(--secondary);
+      color: #fff;
       margin: 20px 0 40px 0;
 
       @include tablet {
@@ -61,7 +69,7 @@
     }
 
     &__header-secondary {
-      color: var(--red);
+      color: #e4acff;
       font-size: 20px;
       margin-bottom: 15px;
       font-family: 'Syne Variable';
@@ -102,7 +110,7 @@
         &__firm {
           font-weight: 500;
           font-family: 'Syne Variable';
-          color: var(--main);
+          color: #00c5ff;
 
           @include mobile {
             font-size: 15px;

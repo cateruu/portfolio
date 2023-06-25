@@ -4,16 +4,20 @@ import { projects } from '../data/projects';
 ---
 
 <section class='projects' id='projects'>
-  {
-    projects.map((project) => (
-      <Project
-        title={project.title}
-        subTitle={project.subTitle}
-        icon={project.icon}
-        href={project.link}
-      />
-    ))
-  }
+  <h2 class='projects__header'>Personal projects</h2>
+  <div class='projects__wrapper'>
+    {
+      projects.map((project) => (
+        <Project
+          title={project.title}
+          subTitle={project.subTitle}
+          icon={project.icon}
+          href={project.link}
+          color={project.color}
+        />
+      ))
+    }
+  </div>
   <img src='/devider.svg' class='devider' />
 </section>
 
@@ -21,13 +25,37 @@ import { projects } from '../data/projects';
   @use '../styles/mixins' as *;
 
   .projects {
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 120px;
+    align-items: center;
+
+    &__header {
+      font-size: 20px;
+      font-family: 'Syne Variable';
+      font-weight: 700;
+      color: #e4acff;
+      margin-bottom: 20px;
+    }
 
     @include mobileL {
       margin-top: 80px;
+    }
+
+    &__wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      @include tablet {
+        justify-content: space-between;
+      }
+
+      @include tabletS {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
     }
   }
 
