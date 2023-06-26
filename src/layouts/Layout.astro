@@ -33,8 +33,10 @@ const { title } = Astro.props;
 
 <script>
   import { SVGInjector } from '@tanem/svg-injector';
+  import { inject } from '@vercel/analytics';
 
   SVGInjector(document.getElementsByClassName('inject'));
+  inject();
 </script>
 
 <style is:global lang='scss'>
