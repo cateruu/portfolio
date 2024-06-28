@@ -16,6 +16,10 @@ export const frontend = [
     name: 'TypeScript',
   },
   {
+    icon: '/skills/tanstack.png',
+    name: 'Tanstack',
+  },
+  {
     icon: '/skills/redux.svg',
     name: 'Redux',
   },
@@ -47,16 +51,12 @@ export const frontend = [
 
 export const backend = [
   {
-    icon: '/skills/express.svg',
-    name: 'Express',
+    icon: '/skills/golang.svg',
+    name: 'Go',
   },
   {
-    icon: '/skills/supabase.svg',
-    name: 'Supbase',
-  },
-  {
-    icon: '/skills/firebase.svg',
-    name: 'Firebase',
+    icon: '/skills/postgresql.png',
+    name: 'PostgreSQL',
   },
 ];
 
